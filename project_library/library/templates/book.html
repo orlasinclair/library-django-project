@@ -8,22 +8,21 @@
 <h3>Author: {{book.author}}</h3>
 
 
-        <form method="POST">
+        <form class="borrow" method="POST">
             {% csrf_token %}
             {{ form.as_p }}
             {% if not book.borrower %}
             <input class="button" type="submit" value="Borrow me!">
             {% elif book.borrower == user %}
-            <input class="button" type="submit" disabled='true' value="Return me!">
-            <!-- <a href="{% url 'library-return' book_id=book.id%}">Return Me</a>  -->
+            <button><a href="{% url 'library-return' book_id=book.id%}">Return Me</a></button>
             {% else %}
-            <input class="button" type="submit" disabled='true' value="all ready borrowed">
+            <input class="button" type="submit" disabled='true' value="Already borrowed">
             {% endif %}
         </form>
          {% if book.borrower == user %}
-            <div>Thank you for borrowing me!</div>
+            <div class="thanks">Thank you for borrowing me!</div>
         {% elif book.borrower %}
-            <div>I have been borrowed by {{book.borrower.username}}!</div>
+            <div class="sorry">Sorry I have already been borrowed by {{book.borrower.username}}!</div>
         {% endif %}
 
 {% endblock content %}

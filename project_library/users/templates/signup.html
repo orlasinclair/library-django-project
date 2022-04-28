@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <form method="POST">
+    <form class='sign-up' method="POST">
         {% csrf_token %}
         {{ form.as_p }}
         <input type="submit" value="Sign Up">
@@ -9,6 +9,6 @@
 
     <span class="helptext">
         Already have an account?
-        <a href="{% url 'login' %}">Login here</a>
+        <button><a href="{% url 'login' %}">Login here</a></button>
     </span>
 {% endblock content %}

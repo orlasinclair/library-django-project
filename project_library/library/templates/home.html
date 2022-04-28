@@ -6,9 +6,14 @@
 
 <ul>
     {% for book in books%} 
-    <li>
+    <div class="card">
+        <div class="container">
+          <h4><a href="{% url 'library-show' book_id=book.id %}">{{book.title}}</a></h4>
+        </div>
+      </div>
+    <!-- <li>
         <a href="{% url 'library-show' book_id=book.id %}">{{book.title}}</a>
-    </li>
+    </li> -->
     {% endfor %}
 </ul>
 
