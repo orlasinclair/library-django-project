@@ -14,8 +14,7 @@
             {% if not book.borrower %}
             <input class="button" type="submit" value="Borrow me!">
             {% elif book.borrower == user %}
-            <input class="button" type="submit" disabled='true' value="Return me!">
-            <!-- <a href="{% url 'library-return' book_id=book.id%}">Return Me</a>  -->
+            <a href="{% url 'library-return' book_id=book.id%}"><buttun>Return Me</buttun></a> 
             {% else %}
             <input class="button" type="submit" disabled='true' value="all ready borrowed">
             {% endif %}
