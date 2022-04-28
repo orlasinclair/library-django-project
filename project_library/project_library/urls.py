@@ -27,7 +27,8 @@ urlpatterns = [
     path('', include('library.urls')),
     path('login/', auth_views.LoginView.as_view(template_name='login.html'), name='login'),
     path('logout/', auth_views.LogoutView.as_view(template_name='logout.html'), name='logout'),
-    path('email-service/', include('email_service.urls'))
+    path('email-service/', include('email_service.urls')),
+    path('chat/', include('chat.urls')),
 ]
 
 handler404 = 'library.views.not_found_404'

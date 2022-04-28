@@ -31,6 +31,8 @@ ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 # Application definition
 
 INSTALLED_APPS = [
+    'chat',
+    'channels',
     'library.apps.LibraryConfig',
     'users.apps.UsersConfig',
     'email_service.apps.EmailServiceConfig',
@@ -131,8 +133,12 @@ LOGIN_URL = 'login'
 
 from .settings_local import *
 
+# Emails
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = '465'
 EMAIL_USE_TLS = False
 EMAIL_USE_SSL = True
+
+# Channels
+ASGI_APPLICATION = 'project_library.asgi.application'
