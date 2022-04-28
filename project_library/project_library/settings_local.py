@@ -1,0 +1,2 @@
+EMAIL_HOST_USER='rookwilkes@gmail.com'
+EMAIL_HOST_PASSWORD='R00k2022'
